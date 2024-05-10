@@ -1,0 +1,88 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body><form id="form1" name="form1" method="post" action="/editofficercode" enctype="multipart/form-data">
+<table width="200" border="1"class="table table-hover">
+  <tr>
+      <td><b>First Name</b></td>
+    <td>
+      <label>
+        <input type="text" name="textfield" class="form-control" value="{{ val.fname }}" required/>
+        </label>
+</td>
+  </tr>
+  <tr>
+      <td><b>Last Name </b></td>
+    <td>
+      <label>
+        <input type="text" name="textfield2" class="form-control" value="{{ val.lname }}" required />
+        </label>
+</td>
+  </tr>
+  <tr>
+    <td><b>Place</b></td>
+    <td>
+      <label>
+        <input type="text" name="textfield3" class="form-control" value="{{ val.place }}" required />
+        </label>
+</td>
+  </tr>
+  <tr>
+      <td><b>Post</b></td>
+    <td>
+      <label>
+        <input type="text" name="textfield4" class="form-control" value="{{ val.post }}" required />
+        </label>
+</td>
+  </tr>
+  <tr>
+      <td><b>Pin</b></td>
+    <td>
+      <label>
+        <input type="text" name="textfield5" class="form-control" value="{{ val.pin }}" required pattern="[0-9]{6}" />
+        </label>
+</td>
+  </tr>
+  <tr>
+      <td><b>Gender</b></td>
+    <td>
+      <label>
+        <input name="radiobutton" type="radio"value="male" {% if val.gender == "male" %} checked {% endif %}/>
+        Male<br />
+        </label>
+      <label>
+        <input name="radiobutton" type="radio" value="female" {% if val.gender == "female" %} checked {% endif %}/>
+        Female</label>
+</td>
+  </tr>
+  <tr>
+      <td><b>Email</b></td>
+    <td>
+      <label>
+        <input type="email" name="textfield6" class="form-control" value="{{ val.email }}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/>
+        </label>
+</td>
+  </tr>
+  <tr>
+      <td><b>Phone</b></td>
+    <td>
+      <label>
+        <input type="text" name="textfield7" class="form-control" value="{{ val.phone }}" required pattern="[0-9]{10}"/>
+        </label>
+</td>
+  </tr>
+  <tr>
+    <td><b>Photo</b></td>
+    <td>
+      <label>
+        <input type="file" name="file" class="form-control"/><img src="/media/{{ val.photo }}" width="100px" height="100px" alt=""/>
+        </label>
+</td>
+  </tr>
+
+    <tr>
+        <td colspan="2" align="center"><input type="submit" value="Update" class="btn btn-info"/></td>
+    </tr>
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/reply_appsearch#about">
+  <table class=" table table-hover">
+    <tr>
+      <td align="right">Date</td>
+      <td><label>
+        <input type="date" name="textfield" value="{{ dt }}" class="form-control" required />
+      </label>&nbsp;&nbsp;&nbsp;<input type="submit" name="Submit" value="search" class="btn btn-success"/></td>
+      <td colspan="4"><label>
+
+      </label></td>
+    </tr>
+    <tr class="table-dark">
+      <td>Sl no </td>
+      <td>Complaint</td>
+         <td>Reply</td>
+         <td>Officer</td>
+      <td>Date</td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+
+      <td>{{ i.complaints }}&nbsp;</td>
+
+    <td>{{ i.reply }}</td>
+    <td>{{ i.OFFICER.fname }} {{ i.OFFICER.lname }}</td>
+    <td>{{ i.date }}&nbsp;</td>
+    </tr>
+      {% endfor %}
+      <tr><td colspan="5" align="center"><a href="sndcomp#about" class="btn btn-success">Send New</a></tr>
+  </table>
+</form>
+{% endblock %}

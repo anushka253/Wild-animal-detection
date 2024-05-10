@@ -1,0 +1,28 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td><a href="/send_complaints_and_view_reply">Send Complaints And View Reply</a></td>
+    </tr>
+    <tr>
+      <td><a href="/view_report">Send Reports</a></td>
+    </tr>
+    <tr>
+      <td><a href="/view_forestfire_notification_officer">View Forest Fire Notification</a></td>
+    </tr>
+    <tr>
+      <td><a href="/view_complaint_from_user_and_send_reply">View Complaints From User</a></td>
+    </tr>
+    <tr>
+      <td><a href="/view_animal_detection_officer">View animal detection</a></td>
+    </tr>
+    <tr>
+      <td><a href="/logout">Logout</a></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

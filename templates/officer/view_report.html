@@ -1,0 +1,25 @@
+{% extends 'officer/officerindex.html' %}
+{% block body %}
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1">
+  <table class="table table-hover">
+    <tr class="table-dark">
+        <td>Slno</td>
+      <td>Date</td>
+      <td>Report</td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.date }}</td>
+        <td><a href="{{ i.report.url }}" download>{{ i.report }}</a> </td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="3" align="center"><a href="send_reports#about" class="btn btn-success">Add</a></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

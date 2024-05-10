@@ -1,0 +1,37 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body><form id="form1" name="form1" method="post" action="/searchrep#about">
+<table class="table table-hover">
+  <tr>
+      <td align="right"><b>Date</b></td>
+    <td>
+      <label>
+        <input type="date" class="form-control" name="textfield" value="{{ dt }}" required/>
+        </label> &nbsp;&nbsp;&nbsp;<input type="submit" name="Submit" value="search" class="btn btn-success" />
+
+    </td>
+    <td colspan="2">
+      <label>
+
+        </label>
+
+    </td>
+  </tr>
+  <tr class="table-dark">
+    <td>Slno</td>
+    <td>Officer</td>
+    <td>Report</td>
+    <td>Date</td>
+  </tr>
+    {% for i in val %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.OFFICER.fname }} {{ i.OFFICER.lname }}</td>
+      <td><a href="{{ i.report.url }}" download/>{{ i.report }}</td></td>
+    <td>{{ i.date }}</td>
+  </tr>
+    {% endfor %}
+</table>
+        </form>
+{% endblock %}

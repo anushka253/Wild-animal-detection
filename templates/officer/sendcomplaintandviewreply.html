@@ -1,0 +1,24 @@
+{% extends 'officer/officerindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class=" table table-hover">
+    <tr class="table-dark">
+      <td>Complaint</td>
+      <td>Date</td>
+      <td>Reply</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.complaints }}</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>{{ i.reply }}&nbsp;</td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="3" align="center"><a href="send_complaint#about"class="btn btn-success">Add complaint</a></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

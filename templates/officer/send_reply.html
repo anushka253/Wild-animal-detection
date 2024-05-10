@@ -1,0 +1,20 @@
+{% extends 'officer/officerindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/sendreplycodeuser">
+  <table width="200" border="1"class="table table-hover">
+    <tr class="table-dark">
+        <td align="right"><B>Reply</B></td>
+      <td>
+        <textarea name="textarea" class="form-control" required></textarea>
+     </td>
+    </tr>
+    <tr  class="table-dark">
+      <td colspan="2" align="center">
+        <input type="submit" name="Submit" value="send" class="btn btn-info" />
+     </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

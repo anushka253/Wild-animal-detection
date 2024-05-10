@@ -1,0 +1,35 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<form id="form1" name="form1" method="post" action="">
+<table class="table table-hover">
+
+  <tr class="table-dark">
+    <td>Slno</td>
+    <td>Camera No</td>
+    <td>Location</td>
+    <td>&nbsp;</td>
+  </tr>
+    {% for i in val %}
+  <tr>
+      <td>{{ forloop.counter }}
+      <td>{{ i.camerano }}</td>
+      <td><a href="https://www.google.com/maps?q={{ i.latitude }},{{ i.longitude }}">Track</a></td>
+
+      <td>
+          <a href="/delete_camera/{{ i.id }}"class="btn btn-success">Delete</a>
+      </td>
+
+  </tr>
+    {% endfor %}
+  <tr>
+    <td colspan="7" align="center"><a href="/addcamera#about" class="btn btn-success">Add</a>
+    </td>
+
+  </tr>
+</table>
+        </form>
+
+{% endblock %}
+
